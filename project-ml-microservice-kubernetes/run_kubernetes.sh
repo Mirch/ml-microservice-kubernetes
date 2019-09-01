@@ -4,11 +4,11 @@
 
 # Step 1:
 # This is your Docker ID/path
-# dockerpath=mirch/ml_service
+dockerpath=mirch/prediction_service
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run mirch/ml_service --image=mirch/ml_service --port=5000
+kubectl run prediction-service --image=docker.io/${dockerpath} --port=8000
 
 # Step 3:
 # List kubernetes pods
@@ -16,5 +16,5 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward mirch/ml_service 5000:80
+kubectl port-forward deployments/prediction-service 8000:80
 

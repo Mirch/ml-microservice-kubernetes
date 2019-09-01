@@ -3,7 +3,7 @@
 
 # Step 1:
 # Build image and add a descriptive tag
-docker build --tag=mirch/ml_service .
+docker build --tag=mirch/prediction_service .
 
 # Step 2: 
 # List docker images
@@ -11,4 +11,4 @@ docker image ls
 
 # Step 3: 
 # Run flask app
-docker run -p 80:80 ml_service
+docker run -p 8000:80 mirch/prediction_service

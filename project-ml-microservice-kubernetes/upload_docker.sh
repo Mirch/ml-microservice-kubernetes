@@ -5,7 +5,7 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=mirch/ml_service
+dockerpath=mirch/prediction_service
 
 # Step 2:  
 # Authenticate & tag
@@ -14,5 +14,8 @@ docker login --username=mirch
 
 # Step 3:
 # Push image to a docker repository
-docker push mirch/ml_service
+docker tag ${dockerpath} ${dockerpath}
+docker push ${dockerpath}
+
+
 
